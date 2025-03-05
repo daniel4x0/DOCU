@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chelsea FC App Documentation on BQuant">
+    <title>Chelsea FC App Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Chelsea FC App Documentation</h1>
+        <p>Your guide to using the Chelsea FC App on BQuant.</p>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <div class="tabs">
+        <button class="tablinks" onclick="openTab(event, 'Installation')">Installation</button>
+        <button class="tablinks" onclick="openTab(event, 'Features')">Features</button>
+        <button class="tablinks" onclick="openTab(event, 'HowToUse')">How to Use</button>
+        <button class="tablinks" onclick="openTab(event, 'Troubleshooting')">Troubleshooting</button>
+        <button class="tablinks" onclick="openTab(event, 'FAQ')">FAQ</button>
+        <button class="tablinks" onclick="openTab(event, 'Resources')">Other Resources</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="Installation" class="tabcontent">
+        <h2>Installation</h2>
+        <p>Follow these steps to get started with the Chelsea FC App:</p>
+        <ol>
+            <li>Clone the repository: <code>git clone &lt;repository_url&gt;</code></li>
+            <li>Install dependencies: <code>pip install -r requirements.txt</code></li>
+            <li>Access the app within BQuant or launch it via your IDE.</li>
+        </ol>
+        <img src="images/installation.png" alt="Installation Process" class="screenshot">
+    </div>
+
+    <div id="Features" class="tabcontent">
+        <h2>Features</h2>
+        <ul>
+            <li><strong>Live Match Stats</strong> - Real-time updates of goals, assists, and player performance.</li>
+            <li><strong>Player Profiles</strong> - Detailed profiles of Chelsea FC players, including stats and performance history.</li>
+            <li><strong>Historical Data</strong> - Access previous match results and statistics.</li>
+            <li><strong>Notifications</strong> - Alerts for match events and news.</li>
+        </ul>
+        <img src="images/features.png" alt="Features Overview" class="screenshot">
+    </div>
+
+    <div id="HowToUse" class="tabcontent">
+        <h2>How to Use</h2>
+        <p>Once set up, you can start exploring the Chelsea FC app’s features. Here's an example of how to view live match stats:</p>
+        <pre><code>
+import bqplot
+import pandas as pd
+
+# Fetch live match data
+match_data = fetch_live_match_data()
+
+# Display live match stats
+chart = bqplot.Figure(marks=[bqplot.Lines(x=match_data['time'], y=match_data['goals'])])
+chart
+        </code></pre>
+        <img src="images/howtouse.png" alt="Usage Example" class="screenshot">
+    </div>
+
+    <div id="Troubleshooting" class="tabcontent">
+        <h2>Troubleshooting</h2>
+        <p>Here are some common issues you might encounter:</p>
+        <ul>
+            <li><strong>Error 404:</strong> Ensure that the repository URL is correct when cloning the app.</li>
+            <li><strong>Missing Dependencies:</strong> Check if all dependencies in <code>requirements.txt</code> are installed.</li>
+            <li><strong>Connection Issues:</strong> Verify that your internet connection is stable when fetching live data.</li>
+        </ul>
+        <img src="images/troubleshooting.png" alt="Troubleshooting Steps" class="screenshot">
+    </div>
+
+    <div id="FAQ" class="tabcontent">
+        <h2>FAQ</h2>
+        <ul>
+            <li><strong>How do I get notifications for matches?</strong> - Enable notifications within the app settings.</li>
+            <li><strong>Can I view past match data?</strong> - Yes, historical match data is available under the "Historical Data" section.</li>
+            <li><strong>Is the app free?</strong> - Yes, the Chelsea FC App is free to use on BQuant!</li>
+        </ul>
+        <img src="images/faq.png" alt="FAQ" class="screenshot">
+    </div>
+
+    <div id="Resources" class="tabcontent">
+        <h2>Other Resources</h2>
+        <p>Here are some additional resources for more information on the Chelsea FC app:</p>
+        <ul>
+            <li><a href="https://www.chelseafc.com/" target="_blank">Official Chelsea FC Website</a></li>
+            <li><a href="https://bquant.app" target="_blank">BQuant Platform Documentation</a></li>
+            <li><a href="https://github.com/" target="_blank">GitHub Repository</a></li>
+        </ul>
+        <img src="images/resources.png" alt="Resources" class="screenshot">
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Chelsea FC App Documentation | All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
