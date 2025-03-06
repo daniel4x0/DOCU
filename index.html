@@ -10,11 +10,13 @@
 <body>
 
     <header>
-        <h1>Chelsea FC Application</h1>
+        <h1>
+            <img src="https://lezebre.lu/images/detailed/14/18614-chelsea-foot-logo.png" alt="Chelsea FC Logo" class="logo"> 
+            Chelsea FC Application
+        </h1>
         <p>Your guide to using the Chelsea FC App - London will always be BLUE.</p>
     </header>
 
-    <!-- Navigation Tabs -->
     <div class="tabs">
         <button class="tablinks" onclick="openTab(event, 'Installation')">Installation</button>
         <button class="tablinks" onclick="openTab(event, 'Features')">Features</button>
@@ -24,27 +26,68 @@
         <button class="tablinks" onclick="openTab(event, 'Resources')">Other Resources</button>
     </div>
 
-    <!-- Tab Content -->
     <div id="Installation" class="tabcontent">
         <h2>Installation</h2>
         <p>Follow these steps to get started with the Chelsea FC App:</p>
         <ol>
-            <li>Look up "Chelsea FC" and install on your device (refer to compatibility tab for device specifications)</li>
-            <li>Click on the "Profile" button on the top right and select "Sign in/Register"</li>
-            <li>Fill up your details and contact information and click on the email link to verify the email address</li>
+            <li>Look up "Chelsea FC" and install on your device (refer to compatibility section below).</li>
+            <li>Click on the "Profile" button on the top right and select "Sign in/Register".</li>
+            <li>Fill up your details and contact information and click on the email link to verify the email address.</li>
         </ol>
-        <img src="images/installation.png" alt="Installation Process" class="screenshot">
+        <button class="compatibility-btn" onclick="toggleCompatibility()">Check Device Compatibility</button>
+
+        <div id="device-compatibility" class="device-compatibility hidden">
+            <div class="mini-tabs">
+                <button class="mini-tablinks active" onclick="openMiniTab(event, 'android')">Android</button>
+                <button class="mini-tablinks" onclick="openMiniTab(event, 'ios')">iOS</button>
+            </div>
+
+            <div id="android" class="mini-tabcontent active">
+                <h3>Android Specifications</h3>
+                <ul>
+                    <li>Minimum OS: Android 8.0+</li>
+                    <li>RAM: 2GB+</li>
+                    <li>Storage: 150MB</li>
+                    <li>Processor: Snapdragon 665 or equivalent</li>
+                </ul>
+            </div>
+
+            <div id="ios" class="mini-tabcontent">
+                <h3>iOS Specifications</h3>
+                <ul>
+                    <li>Minimum OS: iOS 12+</li>
+                    <li>RAM: 2GB+</li>
+                    <li>Storage: 150MB</li>
+                    <li>Processor: A10 Fusion or newer</li>
+                </ul>
+            </div>
+        </div>
     </div>
+    
 
     <div id="Features" class="tabcontent">
         <h2>Features</h2>
         <ul>
-            <li><strong>Live Match Stats</strong> - Real-time updates of goals, assists, and player performance.</li>
-            <li><strong>Player Profiles</strong> - Detailed profiles of Chelsea FC players, including stats and performance history.</li>
-            <li><strong>Historical Data</strong> - Access previous match results and statistics.</li>
-            <li><strong>Notifications</strong> - Alerts for match events and news.</li>
+            <li><strong>Home</strong> - Real-time updates of news, transfers and tweets.</li>
+            <li><strong>Watch</strong> - Ability to watch matches live and also see highlights of archived games played.</li>
+            <li><strong>Matches</strong> - Access previous and future match results and statistics.</li>
+            <li><strong>Explore</strong> -  Search for keywords, play predictor, tickets and stadium tours.</li>
+            <li><strong>Shop</strong> - Buy exclusive Chelsea merch and signed player jerseys</li>
+
         </ul>
-        <img src="images/features.png" alt="Features Overview" class="screenshot">
+    
+        <!-- Carousel Container -->
+        <div class="carousel">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <div class="carousel-images">
+                <img src="images/home.jpeg" class="feature-slide">
+                <img src="images/watch.jpeg" class="feature-slide">
+                <img src="images/matches.jpeg" class="feature-slide">
+                <img src="images/explore.jpeg" class="feature-slide">
+                <img src="images/shop.jpeg" class="feature-slide">
+            </div>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
     </div>
 
     <div id="HowToUse" class="tabcontent">
@@ -97,9 +140,10 @@ chart
     </div>
 
     <footer>
-        <p>&copy; 2025 Chelsea FC App Documentation | All rights reserved.</p>
+        <p>2025 Chelsea FC App Documentation |  Bloomberg DOCU team.</p>
     </footer>
 
     <script src="script.js"></script>
+
 </body>
 </html>
