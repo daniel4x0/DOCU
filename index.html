@@ -20,7 +20,7 @@
     <div class="tabs">
         <button class="tablinks" onclick="openTab(event, 'Installation')">Installation</button>
         <button class="tablinks" onclick="openTab(event, 'Features')">Features</button>
-        <button class="tablinks" onclick="openTab(event, 'HowToUse')">How to Use</button>
+        <button class="tablinks" onclick="openTab(event, 'Players')">Players</button>
         <button class="tablinks" onclick="openTab(event, 'Troubleshooting')">Troubleshooting</button>
         <button class="tablinks" onclick="openTab(event, 'FAQ')">FAQ</button>
         <button class="tablinks" onclick="openTab(event, 'Resources')">Other Resources</button>
@@ -76,10 +76,9 @@
 
         </ul>
     
-        <!-- Carousel Container -->
-        <div class="carousel">
+        <div class="carousel-f">
             <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-            <div class="carousel-images">
+            <div class="carousel-images-f">
                 <img src="images/home.jpeg" class="feature-slide">
                 <img src="images/watch.jpeg" class="feature-slide">
                 <img src="images/matches.jpeg" class="feature-slide">
@@ -90,53 +89,71 @@
         </div>
     </div>
 
-    <div id="HowToUse" class="tabcontent">
-        <h2>How to Use</h2>
-        <p>Once set up, you can start exploring the Chelsea FC app’s features. Here's an example of how to view live match stats:</p>
-        <pre><code>
-import bqplot
-import pandas as pd
-
-# Fetch live match data
-match_data = fetch_live_match_data()
-
-# Display live match stats
-chart = bqplot.Figure(marks=[bqplot.Lines(x=match_data['time'], y=match_data['goals'])])
-chart
-        </code></pre>
-        <img src="images/howtouse.png" alt="Usage Example" class="screenshot">
+    <div id="Players" class="tabcontent">
+        <h2>Key Players and Signings</h2>
+        <div class="people-gallery">
+            <img src="https://img.chelseafc.com/image/upload/f_auto,h_860,q_50/editorial/people/first-team/2024-25/With%20LN/Sanchez/Mens_3333x5000_Avatar_Sanchez_SF_Home_24_25_RGB.png" class="people-image" onclick="expandImage(this)">
+            <img src="https://img.chelseafc.com/image/upload/f_auto,h_860,q_50/editorial/people/first-team/2024-25/With%20LN/Cucurella/Mens_3333x5000_Avatar_Cucurella_SF_Home_24_25_RGB.png" class="people-image" onclick="expandImage(this)">
+            <img src="https://img.chelseafc.com/image/upload/f_auto,h_860,q_50/editorial/people/first-team/2024-25/With%20LN/Colwill/Mens_3333x5000_Avatar_Colwill_SF_Home_24_25_RGB.png" class="people-image" onclick="expandImage(this)">
+            <img src="https://img.chelseafc.com/image/upload/f_auto,h_860,q_50/editorial/people/first-team/2024-25/With%20LN/James/Mens_3333x5000_Avatar_James_SF_Home_24_25_RGB.png" class="people-image" onclick="expandImage(this)">
+            <img src="https://img.chelseafc.com/image/upload/f_auto,h_860,q_50/editorial/people/first-team/2024-25/With%20LN/Fernandez/Mens_3333x5000_Avatar_Fernandez_SF_Home_24_25_RGB.png" class="people-image" onclick="expandImage(this)">
+            <img src="https://img.chelseafc.com/image/upload/f_auto,h_860,q_50/editorial/people/first-team/2024-25/With%20LN/Caicedo/Mens_3333x5000_Avatar_Caicedo_SF_Home_24_25_RGB.png" class="people-image" onclick="expandImage(this)">
+            <img src="https://img.chelseafc.com/image/upload/f_auto,h_860,q_50/editorial/people/first-team/2024-25/With%20LN/Palmer/Mens_3333x5000_Avatar_Palmer_SF_Home_24_25_RGB.png" class="people-image" onclick="expandImage(this)">
+            <img src="https://img.chelseafc.com/image/upload/f_auto,h_860,q_50/editorial/people/first-team/2024-25/With%20LN/Neto/Mens_3333x5000_Avatar_Neto_SF_Home_24_25_RGB.png" class="people-image" onclick="expandImage(this)">
+        </div>
+    
+        <div id="expanded-container" class="expanded-container hidden" onclick="closeExpanded()">
+            <img id="expanded-img" class="expanded-img">
+        </div>
     </div>
+
 
     <div id="Troubleshooting" class="tabcontent">
         <h2>Troubleshooting</h2>
         <p>Here are some common issues you might encounter:</p>
         <ul>
-            <li><strong>Error 404:</strong> Ensure that the repository URL is correct when cloning the app.</li>
-            <li><strong>Missing Dependencies:</strong> Check if all dependencies in <code>requirements.txt</code> are installed.</li>
+            <li><strong>Error 404:</strong> Ensure that the URL is correct when installing the app.</li>
+            <li><strong>Live Video Buffering:</strong> Close and re-open the video tab and if issue still persists, switch video feed to another one.</li>
             <li><strong>Connection Issues:</strong> Verify that your internet connection is stable when fetching live data.</li>
+            <li><strong>Audio Issues:</strong> Ensure that your mobile device is connected to a valid audio output device.</li>
+            <li><strong>Shop Checkout Error:</strong> Try again in 30 minutes or access directy from the website.</li>
         </ul>
-        <img src="images/troubleshooting.png" alt="Troubleshooting Steps" class="screenshot">
     </div>
 
     <div id="FAQ" class="tabcontent">
-        <h2>FAQ</h2>
-        <ul>
-            <li><strong>How do I get notifications for matches?</strong> - Enable notifications within the app settings.</li>
-            <li><strong>Can I view past match data?</strong> - Yes, historical match data is available under the "Historical Data" section.</li>
-            <li><strong>Is the app free?</strong> - Yes, the Chelsea FC App is free to use on BQuant!</li>
-        </ul>
-        <img src="images/faq.png" alt="FAQ" class="screenshot">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">Can i get a refund on a purchased ticket?</div>
+                <div class="faq-answer">Absolutely, please <a href="https://cfcticketing.powerappsportals.com/forms/Refund-Request/" target="_blank">click here</a></div>
+            </div>
+    
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">How can I contact support?</div>
+                <div class="faq-answer">You can contact support via email through our contact form.</div>
+            </div>
+    
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">Do you have a mobile app?</div>
+                <div class="faq-answer">Yes, please refer to tab one for more info!</div>
+            </div>
+    
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">Is there a subscription fee?</div>
+                <div class="faq-answer">No, our platform is completely free to use!</div>
+            </div>
+        </div>
     </div>
+    
 
     <div id="Resources" class="tabcontent">
         <h2>Other Resources</h2>
         <p>Here are some additional resources for more information on the Chelsea FC app:</p>
         <ul>
             <li><a href="https://www.chelseafc.com/" target="_blank">Official Chelsea FC Website</a></li>
-            <li><a href="https://bquant.app" target="_blank">BQuant Platform Documentation</a></li>
-            <li><a href="https://github.com/" target="_blank">GitHub Repository</a></li>
+            <li><a href="https://www.chelseafc.com/en/tickets/mens-tickets" target="_blank">Ticket Sales Site</a></li>
+            <li><a href="https://github.com/daniel4x0/DOCU" target="_blank">GitHub Repository</a></li>
         </ul>
-        <img src="images/resources.png" alt="Resources" class="screenshot">
     </div>
 
     <footer>
